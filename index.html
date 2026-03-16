@@ -3,299 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShuHao Game Studio</title>
+    <title>Shahin Soft - Crafting Worlds, One Game at a Time</title>
     <style>
-        /* 1. 基础设置 */
-        :root {
-            --primary-color: #2563eb; /* 科技蓝 */
-            --text-dark: #1f2937;     /* 深灰文字 */
-            --text-light: #6b7280;    /* 浅灰文字 */
-            --bg-color: #f9fafb;      /* 极浅的灰白背景 */
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            background-color: #fdfdfd;
+            color: #333;
+            margin: 0;
+            padding: 20px;
         }
-
-        /* 2. 导航栏 */
-        nav {
-            background: var(--white);
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--text-dark);
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--primary-color);
-        }
-
-        /* 3. Hero 区域 (首屏) */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px rgba(37, 99, 235, 0.3);
-        }
-
-        /* 4. 通用容器 */
         .container {
-            max-width: 1100px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 80px 20px;
+            background-color: #ffffff;
+            padding: 2em 3em;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
         }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 60px;
-            font-weight: 700;
-        }
-
-        /* 5. 项目展示 (卡片布局) */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px rgba(0,0,0,0.1);
-        }
-
-        /* 模拟图片区域 */
-        .card-image {
-            height: 180px;
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6); /* 蓝紫渐变 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .card-image.secondary {
-            background: linear-gradient(45deg, #10b981, #3b82f6); /* 绿蓝渐变 */
-        }
-
-        .card-content {
-            padding: 25px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 1.25rem;
-        }
-
-        .card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #eff6ff;
-            color: var(--primary-color);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+        h1, h2 {
             font-weight: 600;
+            color: #111;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-top: 1.5em;
         }
-
-        /* 6. 关于我们 */
-        .about-section {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 60px;
+        h1 {
+            font-size: 2.5em;
             text-align: center;
+            border-bottom: none;
+            margin-top: 0;
         }
-
-        /* 7. 联系方式 */
-        .contact-section {
+        h1 .tagline {
+            font-size: 0.5em;
+            font-weight: 400;
+            color: #666;
+            display: block;
+            margin-top: 10px;
+        }
+        nav {
             text-align: center;
-            padding: 100px 20px;
+            margin-bottom: 2.5em;
+            padding-bottom: 1.5em;
+            border-bottom: 2px solid #f0f0f0;
         }
-
-        .email-link {
-            font-size: 1.5rem;
-            color: var(--text-dark);
+        nav a {
             text-decoration: none;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 5px;
-            transition: color 0.2s;
+            color: #007bff;
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 1.1em;
         }
-
-        .email-link:hover {
-            color: var(--primary-color);
+        nav a:hover {
+            text-decoration: underline;
         }
-
-        /* 8. 底部 */
+        p {
+            font-size: 1.1em;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 0.5em;
+            font-size: 1.1em;
+        }
+        a {
+            color: #007bff;
+        }
         footer {
-            background: #f3f4f6;
             text-align: center;
-            padding: 40px;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* 手机适配 */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .section-title { font-size: 1.5rem; }
+            margin-top: 3em;
+            padding-top: 1.5em;
+            border-top: 2px solid #f0f0f0;
+            color: #888;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
 
-    <!-- 导航 -->
-    <nav>
-        <div class="logo">ShuHao<span>.Studio</span></div>
-        <div style="font-size: 0.9rem; font-weight: 600;">Est. 2024</div>
-    </nav>
-
-    <!-- 首屏 Hero -->
-    <header class="hero">
-        <h1>Crafting Worlds, <br>One Pixel at a Time.</h1>
-        <p>We are ShuHao Game Studio. An independent team dedicated to creating immersive mobile and PC gaming experiences.</p>
-        <a href="#projects" class="btn">View Our Games</a>
-    </header>
-
-    <!-- 项目展示 -->
-    <div id="projects" class="container">
-        <h2 class="section-title">Selected Projects</h2>
-        
-      <div class="projects-grid">
-            <!-- 项目 A：Aether Chronicles -->
-            <article class="card">
-                <!-- 这里的渐变色我换成了深邃的紫色和蓝色，配合幻想主题 -->
-                <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                    AETHER
-                </div>
-                <div class="card-content">
-                    <h3>Aether Chronicles</h3>
-                    <p>A fantasy RPG exploring a world of floating islands and ancient magic. Restore the balance of elements.</p>
-                    <span class="tag">Adventure</span>
-                    <span class="tag">RPG</span>
-                </div>
-            </article>
-
-            <!-- 项目 B：Neon Blitz -->
-            <article class="card">
-                <!-- 这里的渐变色用了高饱和度的粉红和橙色，配合霓虹主题 -->
-                <div class="card-image" style="background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);">
-                    NEON
-                </div>
-                <div class="card-content">
-                    <h3>Neon Blitz</h3>
-                    <p>Fast-paced arcade action set in a cyberpunk city. Master the rhythm and climb the leaderboards.</p>
-                    <span class="tag">Arcade</span>
-                    <span class="tag">Action</span>
-                </div>
-            </article>
-
-            <!-- 项目 C：未公开项目 (保持神秘感) -->
-            <article class="card">
-                <div class="card-image" style="background: linear-gradient(45deg, #434343 0%, #000000 100%); color: #888;">
-                    ???
-                </div>
-                <div class="card-content">
-                    <h3>Project: Horizon</h3>
-                    <p>An unannounced multiplayer experiment. Currently in early prototyping stage.</p>
-                    <span class="tag">R&D</span>
-                    <span class="tag">Multiplayer</span>
-                </div>
-            </article>
-        </div>
-    </div>
-
-    <!-- 关于我们 -->
     <div class="container">
-        <div class="about-section">
-            <h2 class="section-title">Our Philosophy</h2>
-            <p style="max-width: 700px; margin: 0 auto; color: var(--text-light);">
-                At ShuHao Game Studio, we believe that games are more than just entertainment—they are a medium for art and connection. We strive to build games that respect the player's time, offering polished mechanics and engaging narratives without the clutter.
-            </p>
-        </div>
-    </div>
+        <!-- 公司头部信息 -->
+        <header>
+            <h1>
+                Shahin Soft
+                <span class="tagline">Crafting Worlds, One Game at a Time.</span>
+            </h1>
+        </header>
 
-    <!-- 联系方式 -->
-    <div class="contact-section">
-        <h2 class="section-title">Let's Create Together</h2>
-        <p style="margin-bottom: 30px; color: var(--text-light);">
-            Interested in publishing, investment, or just want to say hi?
-        </p>
-        <a href="mailto:Chris.Andrewsupt@icloud.com" class="email-link">
-            Chris.Andrewsupt@icloud.com
-        </a>
-    </div>
+        <!-- 导航栏 -->
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#games">Our Games</a>
+            <a href="#careers">Careers</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-    <!-- 底部 -->
-    <footer>
-        &copy; 2024 ShuHao Game Studio. All rights reserved.
-    </footer>
+        <main>
+            <!-- 关于我们 -->
+            <section id="about">
+                <h2>About Us</h2>
+                <p>
+                    Welcome to Shahin Soft. We are a passionate and innovative game development studio dedicated to creating unforgettable gaming experiences. Founded on the belief that games are a powerful medium for storytelling and connection, our mission is to build immersive worlds that captivate players and leave a lasting impact.
+                </p>
+                <p>
+                    Our philosophy is "Play with Purpose." Every game we create has a meaningful reason to exist. As a small, agile team, we thrive on creative freedom and collaboration, allowing us to polish our games to the highest standard and ensure that every voice on the team is heard. We don't just make games; we build dreams.
+                </p>
+            </section>
+
+            <!-- 我们的游戏 -->
+            <section id="games">
+                <h2>Our Games</h2>
+                <h3>Project: ÆTHERIA (Working Title)</h3>
+                <p>
+                    <strong>Genre:</strong> Narrative-driven Puzzle Adventure<br>
+                    <strong>Platform:</strong> Mobile (iOS & Android) and PC (Steam)<br>
+                    <strong>Status:</strong> In Development
+                </p>
+                <p>
+                    We are currently deep in development on our debut title, Project Ætheria. Dive into a vibrant, hand-drawn world and solve mind-bending environmental puzzles to uncover a forgotten history. It’s a journey of discovery that will test your wits and warm your heart. While we can't reveal everything just yet, we are excited to share more updates soon.
+                </p>
+            </section>
+
+            <!-- 招聘信息 -->
+            <section id="careers">
+                <h2>Careers</h2>
+                <p>
+                    Join our adventure! We are looking for talented and self-motivated individuals to help us shape the future of gaming. At Shahin Soft, you'll have the opportunity to work on exciting new projects from the ground up, with a high degree of ownership and creative input.
+                </p>
+                <h3>Current Openings:</h3>
+                <ul>
+                    <li>Unity Game Developer</li>
+                    <li>2D/3D Generalist Game Artist</li>
+                    <li>Systems & Economy Game Designer</li>
+                </ul>
+                <p>
+                    We are always on the lookout for exceptional talent. If you don't see a role that fits but believe you have what it takes to contribute to our team, we would still love to hear from you.
+                </p>
+                <p>
+                    <strong>How to Apply:</strong> Please send your resume, portfolio, and a brief cover letter explaining why you want to join Shahin Soft to our contact email: <a href="mailto:zahirshahin190@gmail.com">zahirshahin190@gmail.com</a>
+                </p>
+            </section>
+
+            <!-- 联系方式 -->
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>
+                    Let's create together. We are always open to new connections. Whether you are a player with feedback, a talented developer looking for your next challenge, or a potential business partner, we want to hear from you.
+                </p>
+                <p>
+                    <strong>General Inquiries & Business Development:</strong><br>
+                    For all questions, press inquiries, or partnership opportunities, please reach out to us at:<br>
+                    <a href="mailto:zahirshahin190@gmail.com">zahirshahin190@gmail.com</a>
+                </p>
+            </section>
+        </main>
+
+        <!-- 底部版权信息 -->
+        <footer>
+            <p>&copy; 2026 Shahin Soft. All Rights Reserved.</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
